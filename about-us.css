@@ -48,7 +48,7 @@ h1 {
     width: 85%;
     height: 270vh;
     background: linear-gradient(to right, rgba(113, 253, 113, 0.75), rgba(130, 130, 252, 0.75)),
-    url(pic13.jpg);
+    url("images/pic13.jpg");
     color: #fff;
     border-radius: 50px;
     margin-left: 100px;
