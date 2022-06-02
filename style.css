@@ -22,44 +22,38 @@ body {
     background-position: center;
 
 }
-.navbar {
-
-    width: 85%;
-    margin: auto;
-    padding: 35px 0;
-    align-items: center;
+header{
     display: flex;
+    align-items: center;
     justify-content: space-between;
-}
-.logo {
-    color: #009688;
-    width: 300px;
-    cursor: pointer;
-    font-size: 25px;
-}
-.navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
-}
-.navbar ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-.navbar ul li ::after {
-    content: '';
-    height: 3px;
-    width: 0;
-    background: #009688;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-} 
-.navbar ul li :hover::after {
     width: 100%;
+    padding:2rem 7%;
+    border-bottom: .1rem solid rgba(0,0,0,.1);
+    position: relative;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.75);
 }
+  
+header .logo{
+    font-size: 1.5rem;
+    color:#009688;
+    font-weight: bold;
+    text-decoration: none;
+}
+  
+
+  
+header .navbar a{
+    margin-left: 2rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color:white;
+}
+  
+header .navbar a:hover{
+    color:#009688;
+}
+
 .content {
      width: 100%;
      margin-top: 100px;
@@ -201,4 +195,39 @@ footer {
     background: #fff;
     margin-right: 15px;
     cursor: pointer;
+}
+#menu{
+    font-size: 2.5rem;
+    padding:.5rem 1rem;
+    border-radius: .3rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    cursor: pointer;
+    display: none;
+}
+
+
+@media screen and (max-width:1040px) {
+    #menu{
+        display: initial;
+    }
+    
+    header .navbar{
+        position: absolute;
+        top:100%; left:0; right:0;
+        background:black;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    header .navbar a{
+        font-size: 2.5rem;
+        display: block;
+        margin:2rem 0;
+        text-align:center;
+    }
 }
